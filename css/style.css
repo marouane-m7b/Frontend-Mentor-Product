@@ -1,0 +1,119 @@
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+  --font-family-1: "Fraunces", serif;
+  --font-family-2: "Montserrat", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Cream)
+}
+.container {
+  height: 400px;
+  width: 600px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(2 ,1fr);
+  background-color: var(--White);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 375px) {
+  .container {
+    height: 550px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "side1""side2""side2";
+  }
+}
+.container .side-1 {
+  background-image: url(../images/image-product-desktop.jpg);
+  background-size: cover;
+}
+@media (max-width: 375px) {
+  .container .side-1 {
+    background-image: url(../images/image-product-mobile.jpg);
+    grid-area: side1;
+  }
+}
+.container .side-2 {
+  padding: 30px;
+}
+@media (max-width: 375px) {
+  .container .side-2 {
+    grid-area: side2;
+  }
+}
+.container .side-2 .perfume {
+  font-family: var(--font-family-2);
+  color: var(--Dark-grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.container .side-2 .name {
+  font-family: var(--font-family-1);
+  font-size: 28px;
+  padding-top: 15px;
+  padding-right: 30px;
+}
+.container .side-2 p {
+  font-family: var(--font-family-2);
+  color: var(--Dark-grayish-blue);
+}
+.container .side-2 .full-price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .side-2 .price {
+  font-size: 32px;
+  color: var(--Dark-cyan);
+  font-family: var(--font-family-1);
+}
+.container .side-2 .dis {
+  font-family: var(--font-family-2);
+  color: var(--Dark-grayish-blue);
+  text-decoration: line-through;
+  padding-left: 20px;
+}
+.container .side-2 button {
+  width: 100%;
+  background-color: var(--Dark-cyan);
+  padding: 15px 0;
+  margin: 20px 0 20px;
+  color: var(--White);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family-2);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.container .side-2 button:hover {
+  background-color: hsl(158, 49%, 15%);
+  cursor: pointer;
+}
+.container .side-2 button img {
+  margin-right: 15px;
+}
